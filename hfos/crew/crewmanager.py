@@ -30,8 +30,8 @@ Module: Crewmanager
 
 """
 
-from hfos.component import ConfigurableComponent
-from hfos.logger import warn  # , hfoslog, error, critical
+from isomer.component import ConfigurableComponent
+from isomer.logger import warn  # , hfoslog, error, critical
 
 
 # from hfos.database import objectmodels
@@ -43,7 +43,7 @@ class Crewmanager(ConfigurableComponent):
     """
     The Crew component monitors crew changes. It does not do much.
     """
-    channel = "hfosweb"
+    channel = 'isomer-web'
 
     configprops = {
     }

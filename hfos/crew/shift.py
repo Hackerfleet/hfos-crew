@@ -33,8 +33,8 @@ Shift: Stores shift information for timetables and assisted rotation
 
 """
 
-from hfos.schemata.defaultform import *
-from hfos.schemata.base import uuid_object
+from isomer.schemata.defaultform import *
+from isomer.schemata.base import uuid_object
 
 # TODO: Convert to base_object
 

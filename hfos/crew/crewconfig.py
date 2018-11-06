@@ -34,8 +34,8 @@ other useful features
 
 """
 
-from hfos.schemata.defaultform import *
-from hfos.schemata.base import base_object
+from isomer.schemata.defaultform import *
+from isomer.schemata.base import base_object
 
 CrewSchema = base_object('crewconfig')
 

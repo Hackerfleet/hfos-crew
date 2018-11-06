@@ -44,11 +44,11 @@ This software package is a plugin module for HFOS.
           'hfos>=1.2.0',
           'hfos-navdata>=0.0.1'
       ],
-      entry_points="""[hfos.components]
+      entry_points="""[isomer.components]
     crew=hfos.crew.crewmanager:Crewmanager
-    [hfos.schemata]
+    [isomer.schemata]
     crewconfig=hfos.crew.crewconfig:CrewConfig
-    [hfos.provisions]
+    [isomer.provisions]
     crewconfig=hfos.crew.provisions.crewconfig:provision
     """,
       test_suite="tests.main.main",
