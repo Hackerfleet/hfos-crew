@@ -23,45 +23,30 @@ __license__ = "AGPLv3"
 
 """
 
+Provisioning: Crewconfig
+========================
 
-Module: Crewmanager
-===================
+Contains
+--------
+
+Crew configurations for ships and other manned things.
 
 
 """
 
-from isomer.component import ConfigurableComponent
-from isomer.logger import warn  # , hfoslog, error, critical
+from isomer.provisions.base import provisionList
+from isomer.database import objectmodels
+from isomer.logger import isolog
 
-
-# from isomer.database import objectmodels
-# from datetime import datetime
-# from isomer.events.system import updatesubscriptions, send
-
-
-class Crewmanager(ConfigurableComponent):
-    """
-    The Crew component monitors crew changes. It does not do much.
-    """
-    channel = 'isomer-web'
-
-    configprops = {
+CrewConfig = [
+    {
+        'name': 'Default',
+        'uuid': '7df83542-c1c1-4c70-b754-51174a53453a',
+        'description': 'Default blank crew configuration',
+        'shared': True,
+        'locked': False,
     }
+]
 
-    def __init__(self, *args):
-        """
-        Initialize the Crew component.
 
-        :param args:
-        """
-
-        super(Crewmanager, self).__init__("CREW", *args)
-
-        self.log("Started")
-
-    def crewrequest(self, event):
-        self.log("Someone interacts with the crew! Yay!", event, lvl=warn)
-
-    def objectcreation(self, event):
-        if event.schema == 'crewconfig':
-            self.log("Crewconfig was modified: ", event)
+provision = {'data': CrewConfig, 'model': 'crewconfig'}
