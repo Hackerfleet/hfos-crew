@@ -3,7 +3,7 @@ import './crew/crewmanagement.scss';
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
 
-import { routing } from './crew.config.js';
+import {routing} from './crew.config.js';
 
 import rostercomponent from './crew/roster';
 import template from './crew/roster.tpl.html';
