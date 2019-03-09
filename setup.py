@@ -3,7 +3,7 @@
 
 # HFOS - Hackerfleet Operating System
 # ===================================
-# Copyright (C) 2011-2018 Heiko 'riot' Weinen <riot@c-base.org> and others.
+# Copyright (C) 2011-2019 Heiko 'riot' Weinen <riot@c-base.org> and others.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -23,33 +23,50 @@ __license__ = "AGPLv3"
 
 from setuptools import setup, find_packages
 
-setup(name="hfos-crew",
-      version="0.0.1",
-      description="hfos-crew",
-      author="Hackerfleet Community",
-      author_email="riot@c-base.org",
-      url="https://github.com/hackerfleet/hfos-crew",
-      license="GNU Affero General Public License v3",
-      packages=find_packages(),
-      long_description="""HFOS - Crew
+setup(
+    name="hfos-crew",
+    version="0.0.1",
+    description="hfos-crew",
+    author="Hackerfleet Community",
+    author_email="riot@c-base.org",
+    url="https://github.com/hackerfleet/hfos-crew",
+    license="GNU Affero General Public License v3",
+    classifiers=[
+        'Development Status :: 2 - Pre-Alpha',
+        'Environment :: Web Environment',
+        'Framework :: Isomer :: 1',
+        'License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)',
+        'Operating System :: Linux',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3 :: Only',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: Implementation :: PyPy',
+        'Programming Language :: Python :: Implementation :: CPython'
+    ],
+    packages=find_packages(),
+    include_package_data=True,
+    long_description="""HFOS - Crew
 ================
 
 A crew frontend to visualize data.
 
 This software package is a plugin module for HFOS.
 """,
-      dependency_links=[
-      ],
-      install_requires=[
-          'isomer>=1.0.0',
-          'hfos-navdata>=0.0.1'
-      ],
-      entry_points="""[isomer.components]
-    crew=hfos.crew.crewmanager:Crewmanager
+    dependency_links=[
+    ],
+    install_requires=[
+        'isomer>=1.0.0',
+        'hfos-navdata>=0.0.1'
+    ],
+    entry_points="""[isomer.components]
+    crew=isomer.crew.crewmanager:Crewmanager
     [isomer.schemata]
-    crewconfig=hfos.crew.crewconfig:CrewConfig
+    crewconfig=isomer.crew.crewconfig:CrewConfig
     [isomer.provisions]
-    crewconfig=hfos.crew.provisions.crewconfig:provision
+    crewconfig=isomer.crew.provisions.crewconfig:provision
     """,
-      test_suite="tests.main.main",
-      )
+    test_suite="tests.main.main",
+)
