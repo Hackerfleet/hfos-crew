@@ -3,7 +3,7 @@
 
 # HFOS - Hackerfleet Operating System
 # ===================================
-# Copyright (C) 2011-2018 Heiko 'riot' Weinen <riot@c-base.org> and others.
+# Copyright (C) 2011-2019 Heiko 'riot' Weinen <riot@c-base.org> and others.
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -40,14 +40,20 @@ from isomer.schemata.base import base_object
 CrewSchema = base_object('crewconfig')
 
 CrewSchema['properties'].update({
-    'locked': {'type': 'boolean', 'title': 'Locked Crew',
-               'description': 'Determines whether the Crew should '
-                              'be locked against changes.'},
-    'shared': {'type': 'boolean', 'title': 'Shared Crew',
-               'description': 'Share Crew with the crew'},
-    'description': {'type': 'string', 'format': 'html',
-                    'title': 'Crew description',
-                    'description': 'Crew description'},
+    'locked': {
+        'type': 'boolean', 'title': 'Locked Crew',
+        'description': 'Determines whether the Crew should '
+                       'be locked against changes.'
+    },
+    'shared': {
+        'type': 'boolean', 'title': 'Shared Crew',
+        'description': 'Share Crew with the crew'
+    },
+    'description': {
+        'type': 'string', 'format': 'html',
+        'title': 'Crew description',
+        'description': 'Crew description'
+    },
 })
 
 CrewForm = [
